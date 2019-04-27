@@ -24,8 +24,8 @@ Selanjutnya Anda diminta untuk mengaktifkan paket ggplot2, magick, dan grid. Isi
 
 ```{r load-package}
 library(ggplot2)
-library(magick)
-library(grid)
+library(magick) #membaca gambar
+library(grid) #mengatur layout
 ```
 
 Dengan menggunakan dataset household_access, buatlah *scatterplot* dengan nama plot_household berdasarkan kriteria berikut:
@@ -40,7 +40,8 @@ plot_household <-
   household_access %>% 
   ggplot(aes(x = electricity_total, y = safe_sanitation, size = safe_water, colour = year)) +
   geom_point()
-plot_household
+plot_household +
+  scale_color_brewer(palette = 'Pastel') #menmabah warna 
 ```
 
 Pada grafik tersebut nampak banyak titik-titik observasi yang menumpuk. Perbakilah hal tersebut dengan mengatur nilai argumen `alpha` dalam baris kode `geom_point()`. Anda dapat bereksperimen mencari visual yang sesuai dengan menggunakan nilai alpha antara 0 hingga 1. Selain itu gantilah palet warna dari *aesthetic mapping colour* dengan menambahkan kode warna (*hexvalue*): "#162c4f", "#2c89a0", "#37c871", "#b3b3b3", dan "#2c62a0" ke baris kode `scale_color_manual()`. Simpan grafik hasil modifikasi Anda tersebut dalam obyek R dengan nama plot_household seperti sebelumnya!
@@ -74,7 +75,7 @@ plot_household <-
   plot_household +
   labs(
     title = "Scatter Plot Electricity Total and Safe Sanitation",
-    subtitle = "Electricity Total and Safe Sanitation",
+    subtitle = "Indonesia Database for Policy and Economic",
     caption = "Author: Aniq Rohmawati \n Contact: aniqmuchibbin@gmail.com \n Data source: The World Bank, 2019",
     x = "Electricity Total",
     y = "Safe Sanitation",
@@ -126,6 +127,6 @@ Selain dengan menggunakan *preset theme* dari ggplot2 atau meracik tema sendiri,
 
 ```{r facet-plot_household}
 plot_household +
-  facet_wrap(~year)
+  facet_wrap(~year) #membuat kanvas berdasarkan tahun coba 'face_grid(~year)'
 ```
 

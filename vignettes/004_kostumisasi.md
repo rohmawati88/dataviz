@@ -304,8 +304,8 @@ Selanjutnya Anda diminta untuk mengaktifkan paket ggplot2, magick, dan grid. Isi
 
 ``` r
 library(ggplot2)
-library(magick)
-library(grid)
+library(magick) #membaca gambar
+library(grid) #mengatur layout
 ```
 
 Dengan menggunakan dataset household\_access, buatlah *scatterplot* dengan nama plot\_household berdasarkan kriteria berikut:
@@ -320,7 +320,8 @@ plot_household <-
   household_access %>% 
   ggplot(aes(x = electricity_total, y = safe_sanitation, size = safe_water, colour = year)) +
   geom_point()
-plot_household
+plot_household +
+  scale_color_brewer(palette = 'Pastel') #menmabah warna 
 ```
 
 <img src="004_kostumisasi_files/figure-markdown_github/plot-household1-1.png" style="display: block; margin: auto;" />
@@ -360,7 +361,7 @@ plot_household <-
   plot_household +
   labs(
     title = "Scatter Plot Electricity Total and Safe Sanitation",
-    subtitle = "Electricity Total and Safe Sanitation",
+    subtitle = "Indonesia Database for Policy and Economic",
     caption = "Author: Aniq Rohmawati \n Contact: aniqmuchibbin@gmail.com \n Data source: The World Bank, 2019",
     x = "Electricity Total",
     y = "Safe Sanitation",
@@ -420,7 +421,7 @@ Selain dengan menggunakan *preset theme* dari ggplot2 atau meracik tema sendiri,
 
 ``` r
 plot_household +
-  facet_wrap(~year)
+  facet_wrap(~year) #membuat kanvas berdasarkan tahun coba 'face_grid(~year)'
 ```
 
 <img src="004_kostumisasi_files/figure-markdown_github/facet-plot_household-1.png" style="display: block; margin: auto;" />
