@@ -188,7 +188,7 @@ colnames(iris) # ___
     ## [5] "Species"
 
 ``` r
-head(iris) # ___
+head(iris) # 
 ```
 
     ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -251,13 +251,13 @@ class(iris$Species) # ___
     ## [1] "factor"
 
 ``` r
-length(iris$Petal.Width) # ___
+length(iris$Petal.Width) # Berapa jumlah data dari kolom Petal
 ```
 
     ## [1] 150
 
 ``` r
-levels(iris$Species) # ___
+levels(iris$Species) # tipe faktor
 ```
 
     ## [1] "setosa"     "versicolor" "virginica"
@@ -269,7 +269,7 @@ length(levels(iris$Species)) # ___
     ## [1] 3
 
 ``` r
-unique(iris$Species) # ___
+unique(iris$Species) # mengetahui jumlah nilai yang unik tipe apapun
 ```
 
     ## [1] setosa     versicolor virginica 
@@ -340,13 +340,13 @@ typical_data # mencetak dataset typical_data
     ## # ... with 4,990 more rows
 
 ``` r
-vis_dat(typical_data)
+vis_dat(typical_data) #mengelompok kelas data
 ```
 
 <img src="002_eksplor-transform_files/figure-markdown_github/explore-iris2-1.png" style="display: block; margin: auto;" />
 
 ``` r
-skim(typical_data)
+skim(typical_data) #mencetak rincian data di console, mengelompokkan data berdasarkan karakter
 ```
 
     ## Skim summary statistics
@@ -500,8 +500,8 @@ identical(storms_nopipe, storms_pipe) # membandingkan dua dataset, hasilnya TRUE
 
 Buatlah rangkuman tahapan-tahapan apa yang dilakukan untuk melakukan transformasi dataset storms diatas!
 
-1.  Mengambil data storms, dengan label (storms, year, month, wind, pressure)
-2.  Mengambil data storms, dari hasil storms1, pada tahun 2000-2015
+1.  Mengambil kolom data storms, dengan label (storms, year, month, wind, pressure)
+2.  Mengambil baris data storms, dari hasil storms1, pada tahun 2000-2015
 3.  Mengganti nama bulan yang awalnya 'number' menjadi 'nama\_bulan' pada data storms2
 4.  Mengelompokkan data berdasarkan bulan
 5.  ringkasan 'mean' untuk label 'wind' dan 'pressure' data storms4
