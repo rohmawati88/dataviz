@@ -87,7 +87,7 @@ library(ggplot2)
 Anda dapat menggunakan fungsi `qplot()` untuk membuat grafik menggunakan ggplot2. Silakan jalankan `help(qplot)` atau `?qplot` pada konsol RStudio untuk membuka laman dokumentasi fungsi `qplot()`. Dalam contoh ini Anda akan membuat grafik dari dataset diamonds yang tersedia dalam paket ggplot2. Anda dapat melihat isi serta dokumentasi dari dataset tersebut dengan menjalankan `diamonds` dan `?diamonds` di konsol RStudio. Setelah Anda membaca dokumentasi fungsi `qplot()` dan dataset diamonds tersebut, isilah bagian \_\_\_ pada *chunk* berikut untuk membuat grafik hubungan antara berat (sumbu x), harga (sumbu y) dan kejernihan intan dari dataset diamonds.
 
 ``` r
-qplot(x = depth, y = price, colour = clarity, data = diamonds)
+qplot(x = carat, y = price, colour = clarity, data = diamonds)
 ```
 
 <img src="001_pendahuluan_files/figure-markdown_github/plot-diamonds1-1.png" style="display: block; margin: auto;" />
